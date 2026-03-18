@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room Light Control</title>
+</head>
+
+<body style="margin:0; text-align:center;">
+
+  <div id="room"
+  style="
+  height:100vh;
+         background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511');
+         background-size:cover;
+      
+       ">
+  </div>    
+
+  <div style="position:fixed; bottom:20px; width:100%;">
+    <button onclick="turnOn()">ON</button>
+    <button onclick="dimLight()">DIM</button>
+    <button onclick="turnOff()">OFF</button>
+  </div>
+
+  <script>
+    let room = document.getElementById("room");
+
+    function turnOn() {
+      room.style.filter = "brightness(1)";
+    }
+
+    function dimLight() {
+      room.style.filter = "brightness(0.5)";
+    }
+
+    function turnOff() {
+      room.style.filter = "brightness(0)";
+    }
+  </script>
+
+</body>
+</html>

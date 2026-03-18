@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stopwatch</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+  <h1 id="display">00:00:00</h1>
+
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="resumeTimer()">Resume</button>
+
+  <script>
+    let time = 0;
+    let interval = null;
+
+    function updateDisplay() {
+      let mins = Math.floor(time / 60000);
+      let secs = Math.floor((time % 60000) / 1000);
+      let ms = time % 1000;
+
+      document.getElementById("display").innerText =
+        String(mins).padStart(2, '0') + ":" +
+        String(secs).padStart(2, '0') + ":" +
+        String(ms).padStart(2, '0');
+    }
+
+    function startTimer() {
+      if (interval) return;
+
+      interval = setInterval(() => {
+        time += 10;
+        updateDisplay();
+      }, 10);
+    }
+
+    function pauseTimer() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    function resumeTimer() {
+      if (interval) return;
+
+      interval = setInterval(() => {
+        time += 10;
+        updateDisplay();
+      }, 10);
+    }
+  </script>
+
+</body>
+</html>

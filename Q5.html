@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Control</title>
+</head>
+
+<body style="text-align:center;">
+
+  <div style="position:relative; height:300px; border:1px solid black;">
+    <img id="car"
+         src="https://cdn-icons-png.flaticon.com/512/744/744465.png"
+         style="width:100px; position:absolute; left:0px; top:100px;">
+  </div>
+
+  <br>
+
+  <button onclick="move(5)">Forward</button>
+  <button onclick="move(-5)">Reverse</button>
+  <button onclick="stop()">Stop</button>
+
+  <audio id="sound"
+    src="https://www.soundjay.com/transportation/car-engine-1.mp3"
+    loop></audio>
+
+  <script>
+    let car = document.getElementById("car");
+    let sound = document.getElementById("sound");
+
+    let pos = 0;
+    let run;
+
+    function move(speed){
+      clearInterval(run);
+      sound.play();
+
+      run = setInterval(() => {
+        pos += speed;
+        car.style.left = pos + "px";
+      }, 50);
+    }
+
+    function stop(){
+      clearInterval(run);
+      sound.pause();
+      sound.currentTime = 0;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style></style>
+<script>
+ function clr(color){
+    //  document.body.style.backgroundColor = color;
+     let cl=document.getElementById("color");
+     cl.style.backgroundColor=color;
+ }
+ function clr2(color){
+     document.body.background.style.backgroundColor = color;
+ }
+</script>
+<body id ="color" onchange="clr2()">
+    <div id="background"></div>
+    <button onclick="clr('red')">red</button>
+     <button onclick="clr('green')">green </button>
+      <button onclick="clr('blue')">blue</button>
+</body>
+</html>

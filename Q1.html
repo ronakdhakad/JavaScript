@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dark Light Theme Toggle</title>
+
+<style>
+
+/* Light Theme */
+.light{
+    background-color: white;
+    color: black;
+}
+
+/* Dark Theme */
+ .dark{
+    background-color: #121212;
+    color: white;
+} 
+
+</style>
+</head>
+
+<body class="light">
+
+<h1>hello world</h1>
+
+<button onclick="changeTheme()">Change Theme</button>
+
+<script>
+
+function changeTheme(){
+
+    let body = document.body;
+
+    if(body.classList.contains("light")){
+        body.classList.remove("light");
+        body.classList.add("dark");
+    }
+    else{
+        body.classList.remove("dark");
+        body.classList.add("light");
+    }
+
+}
+
+</script>
+
+</body>
+</html>

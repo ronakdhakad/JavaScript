@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Engine Control</title>
+</head>
+
+<body style="text-align:center; padding-top:50px; font-family:Arial;">
+
+<h1>Car</h1>
+
+<img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg"
+     width="300"
+     onclick="toggleEngine()">
+
+<br><br>
+
+<button onclick="startEngine()">Start</button>
+<button onclick="stopEngine()">Stop</button>
+
+<audio id="startSound"
+src="https://www.soundjay.com/mechanical/sounds/car-start-1.mp3"></audio>
+
+<audio id="runSound"
+src="https://www.soundjay.com/transportation/car-engine-1.mp3"
+loop></audio>
+
+<script>
+
+let start = document.getElementById("startSound");
+let run = document.getElementById("runSound");
+
+let isRunning = false;
+
+function startEngine(){
+    run.play();
+    isRunning = true;
+}
+
+function stopEngine(){
+    run.pause();
+    run.currentTime = 0;
+    start.pause();
+    start.currentTime = 0;
+    isRunning = false;
+}
+
+function toggleEngine(){
+    if(isRunning){
+        stopEngine();
+    } else {
+        startEngine();
+    }
+}
+
+</script>
+
+</body>
+</html>

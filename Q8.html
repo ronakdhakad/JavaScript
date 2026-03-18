@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Zoom</title>
+</head>
+
+<body style="text-align:center;">
+
+  <h2>Image Zoom Control</h2>
+
+  <img id="myImage"
+       src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d"
+       style="width:300px; transition:0.3s;">
+
+  <br><br>
+
+  <button onclick="zoomIn()">Zoom In</button>
+  <button onclick="zoomOut()">Zoom Out</button>
+
+  <script>
+    let scale = 1;
+    let img = document.getElementById("myImage");
+
+    function zoomIn() {
+      scale += 0.2;
+      img.style.transform = "scale(" + scale + ")";
+    }
+
+    function zoomOut() {
+      if (scale > 0.2) {
+        scale -= 0.2;
+        img.style.transform = "scale(" + scale + ")";
+      }
+    }
+  </script>
+
+</body>
+</html>

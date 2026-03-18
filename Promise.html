@@ -1,0 +1,29 @@
+<script>
+    var num =0;
+    function add(num){
+        console.log("num: "+num);
+        return new Promise((resolve,reject)=>{
+            resolve(num+2);
+        })
+    }
+    add(num).then((num)=>{
+        add(num).then((num)=>{
+             add(num).then((num)=>{
+                 add(num).then((num)=>{
+                    console.log("Num: "+num);
+                    console.log("End of program");
+                }).catch((error)=>{
+                    console.log("Error: "+error);
+                });
+            }).catch((error)=>{
+                console.log("Error: "+error);
+            });
+        }).catch((error)=>{
+            console.log("Error: "+error);
+        });
+    }).catch((error)=>{
+        console.log("Error: "+error);
+    });
+
+
+</script>

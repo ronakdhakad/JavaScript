@@ -1,0 +1,23 @@
+<script>
+var l=parseInt(prompt("enter 1st number"));
+var b=parseInt(prompt("enter 2nd number"));
+    class rectangle{
+        setData(l,b){
+            this.l=l;
+            this.b=b;
+        }
+
+        area(){
+            document.write("<br>area: "+this.l*this.b);
+        }
+
+        perimeter(){
+            document.write("<br>perimeter: "+(2*(this.l+this.b)));
+        }
+    }
+
+    var obj=new rectangle();
+    obj.setData(l,b);
+    obj.area();
+    obj.perimeter(); 
+</script>

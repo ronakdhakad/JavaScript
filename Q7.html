@@ -21,8 +21,8 @@
   <br><br>
 
   <button onclick="convertText()">Convert</button>
-  <button onclick="startSpeech()">🎤 Speak</button>
-  <button onclick="speakOutput()">🔊 Speak Output</button>
+  <button onclick="startSpeech()">Speak</button>
+  <button onclick="speakOutput()">Speak Output</button>
 
   <h3 id="output"></h3>
 
@@ -40,14 +40,12 @@
         document.getElementById("output").innerText =
           data.responseData.translatedText;
       } catch (err) {
-        alert("Translation error!");
       }
     }
 
     // Speech Recognition (Chrome only)
     function startSpeech() {
       if (!('webkitSpeechRecognition' in window)) {
-        alert("Speech not supported in this browser");
         return;
       }
 
@@ -62,7 +60,6 @@
       recognition.start();
     }
 
-    // Speak Output
     function speakOutput() {
       let text = document.getElementById("output").innerText;
       let lang = document.getElementById("targetLang").value;
